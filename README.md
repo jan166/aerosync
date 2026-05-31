@@ -44,7 +44,7 @@ Ensure you have the following installed on your system:
 
 4. Open your browser and navigate to (브라우저 접속):
    * **URL:** `http://localhost:3001`
-
+   * **URL for other users:** https://7dbdfa4bd1f173.lhr.life/
 ---
 
 ## File Structure (파일 구조)
