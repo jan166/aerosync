@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>AeroSync - YouTube to MP3 Downloader</title>
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Outfit:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <!-- FontAwesome Icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="glass-bg"></div>
+  <div class="glow-orb orb-1"></div>
+  <div class="glow-orb orb-2"></div>
+
+  <div class="app-container">
+    <!-- Header -->
+    <header class="app-header">
+      <div class="brand">
+        <div class="logo-icon">
+          <i class="fa-solid fa-wand-magic-sparkles"></i>
+        </div>
+        <div class="brand-text">
+          <h1>AeroSync</h1>
+          <p>골전도 이어폰 MP3 전송 매니저</p>
+        </div>
+      </div>
+      <button id="btn-open-folder" class="btn btn-secondary">
+        <i class="fa-solid fa-folder-open"></i> Finder에서 다운로드 폴더 열기
+      </button>
+    </header>
+
+    <!-- Main Content -->
+    <main class="main-content">
+      
+      <!-- Input Card -->
+      <section class="card download-card">
+        <div class="card-header">
+          <h2><i class="fa-solid fa-cloud-arrow-down"></i> 유튜브 음악 다운로드</h2>
+          <p>유튜브 동영상 또는 음악 링크를 입력해 MP3 파일로 변환합니다.</p>
+        </div>
+        
+        <form id="download-form" class="download-form">
+          <div class="input-group">
+            <i class="fa-brands fa-youtube input-icon"></i>
+            <input 
+              type="url" 
+              id="youtube-url" 
+              placeholder="https://www.youtube.com/watch?v=..." 
+              required
+            >
+          </div>
+          <button type="submit" id="btn-submit" class="btn btn-primary">
+            <span>변환 시작</span> <i class="fa-solid fa-chevron-right"></i>
+          </button>
+        </form>
+
+        <!-- Progress State -->
+        <div id="progress-container" class="progress-container hidden">
+          <div class="progress-info">
+            <span id="progress-status"><i class="fa-solid fa-spinner fa-spin"></i> 분석 중...</span>
+            <span id="progress-percent">0%</span>
+          </div>
+          <div class="progress-bar-wrapper">
+            <div id="progress-bar" class="progress-bar" style="width: 0%"></div>
+          </div>
+          <p id="download-title" class="download-title">추출 중인 파일 정보...</p>
+        </div>
+      </section>
+
+      <!-- Connection Guide & File List Row -->
+      <div class="dashboard-grid">
+        
+        <!-- Guide Card -->
+        <section class="card guide-card">
+          <h3><i class="fa-solid fa-headphones"></i> 골전도 이어폰 연결 & 전송 방법</h3>
+          <div class="guide-steps">
+            <div class="step">
+              <div class="step-num">1</div>
+              <div class="step-desc">
+                <strong>이어폰 연결하기</strong>
+                <p>골전도 이어폰 전용 USB 케이블을 컴퓨터와 연결합니다. (이어폰 전원은 켜진 상태여야 할 수 있습니다.)</p>
+              </div>
+            </div>
+            <div class="step">
+              <div class="step-num">2</div>
+              <div class="step-desc">
+                <strong>Finder에서 폴더 열기</strong>
+                <p>상단의 <code>Finder에서 다운로드 폴더 열기</code> 버튼을 누르면 다운로드된 MP3가 저장된 폴더가 열립니다.</p>
+              </div>
+            </div>
+            <div class="step">
+              <div class="step-num">3</div>
+              <div class="step-desc">
+                <strong>드래그 앤 드롭 복사</strong>
+                <p>맥북 바탕화면이나 Finder 사이드바에 나타난 <strong>외장 드라이브(이어폰)</strong>로 MP3 파일을 마우스로 끌어서 복사해 넣으세요!</p>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <!-- Downloads List Card -->
+        <section class="card library-card">
+          <h3><i class="fa-solid fa-music"></i> 변환 완료된 음악 리스트</h3>
+          <div id="downloads-list" class="downloads-list">
+            <!-- Dynamic items go here -->
+            <div class="empty-state">
+              <i class="fa-solid fa-compact-disc"></i>
+              <p>아직 다운로드한 음악이 없습니다.</p>
+            </div>
+          </div>
+        </section>
+
+      </div>
+    </main>
+
+    <!-- Footer -->
+    <footer class="app-footer">
+      <p>© 2026 AeroSync. Local Server Environment.</p>
+    </footer>
+  </div>
+  <script src="app.js"></script>
+</body>
+</html>
